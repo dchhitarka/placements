@@ -4,12 +4,48 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dashboard</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 	<header>
-		<h1>Placements Made Easy</h1>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand me-lg-5" href="#">Placements Made Easy</a>
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				  	<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				  	<ul class="navbar-nav me-auto ms-lg-5 mb-2 mb-lg-0">
+					    <li class="nav-item">
+						      <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+					    </li>
+					    <li class="nav-item">
+							<a class="nav-link" aria-current="page" href="companies.html">Companies</a>
+					    </li>
+					    <li class="nav-item">
+							<a class="nav-link" aria-current="page" href="trainings.html">Trainings</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="dashboard.html">Dashborad</a>
+						</li>
+				   	</ul>
+
+				  	<form class="d-flex">
+					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-outline-success me-2" type="submit">Search</button>
+					    <a href="auth/login.html" class="me-2">
+					    	<button class="btn btn-success">Login</button>
+						</a>
+				  	</form>
+				</div>
+			</div>
+		</nav>
+
+<!-- 		<h1>Placements Made Easy</h1>
 		<nav>
 			<a href="../index.html">Home</a>
 			<a href="companies.html">Companies</a>
@@ -18,32 +54,52 @@
 			<a href="auth/login.html">Login</a>
 			<a href="auth/register.html">Register</a>
 		</nav>
-	</header>
+-->	</header>
 
-	<h1>Dashboard</h1>
-	<p>Your Profile</p>
+	<main class="flex-shrink-1">
+		<div class="container my-5">
+			<h1>Dashboard</h1>
+			<p>Your Profile</p>
 
-	<hr>
-	<h1>Application Status (Table with Company Name and Status)</h1>
-	<table>
-		<thead>
-			<th>Company</th>
-			<th>Status</th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Abc</td>
-				<td>Applied</td>
-			</tr>
-			<tr>
-				<td>Abc</td>
-				<td>Applied</td>
-			</tr>
-			<tr>
-				<td>Abc</td>
-				<td>Applied</td>
-			</tr>
-		</tbody>
-	</table>
+			<hr>
+			<h1>Application Status (Table with Company Name and Status)</h1>
+			<table>
+				<thead>
+					<th>Company</th>
+					<th>Status</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Abc</td>
+						<td>Applied</td>
+					</tr>
+					<tr>
+						<td>Abc</td>
+						<td>Applied</td>
+					</tr>
+					<tr>
+						<td>Abc</td>
+						<td>Applied</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+
+	<footer class="footer mt-auto py-3 bg-dark flex-shrink-0">
+	  	<div class="container text-light">
+	    	<p class="float-end mb-1">
+	     	 <a href="#">Back to top</a>
+	    	</p>
+	    	<p class="mb-1">Placements Made Easy &copy; All rights reserved.</p>
+	  	</div>
+	</footer>
+
+
+	<script src="../js/index.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

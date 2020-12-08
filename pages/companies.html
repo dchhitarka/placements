@@ -4,21 +4,107 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Companies</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
 	<header>
-		<h1>Placements Made Easy</h1>
-		<nav>
-			<a href="../index.html">Home</a>
-			<a href="companies.html">Companies</a>
-			<a href="trainings.html">Trainings</a>
-			<a href="dashboard.html">Dashborad</a>
-			<a href="auth/login.html">Login</a>
-			<a href="auth/register.html">Register</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand me-lg-5" href="#">Placements Made Easy</a>
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				  	<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				  	<ul class="navbar-nav me-auto ms-lg-5 mb-2 mb-lg-0">
+					    <li class="nav-item">
+						      <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+					    </li>
+					    <li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="companies.html">Companies</a>
+					    </li>
+					    <li class="nav-item">
+							<a class="nav-link" aria-current="page" href="trainings.html">Trainings</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="dashboard.html">Dashborad</a>
+						</li>
+				   	</ul>
+
+				  	<form class="d-flex">
+					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-outline-success me-2" type="submit">Search</button>
+					    <a href="auth/login.html" class="me-2">
+					    	<button class="btn btn-success">Login</button>
+						</a>
+				  	</form>
+				</div>
+			</div>
 		</nav>
 	</header>
 
-	<h1>Companies</h1>
+	<main class="container my-5">
+		<h1>Companies</h1>
+	 	<div class="album py-5 bg-light">
+	    	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-light">
+	        	<div class="col">
+	          		<div class="card shadow-sm bg-dark">
+			            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+			            	<title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+			            </svg>
+
+			            <div class="card-body">
+			                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		    	            <div class="d-flex justify-content-between align-items-center">
+			        	        <div class="btn-group">
+		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                  		<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+		                   		</div>
+		                		<small class="text-muted">9 mins</small>
+		              		</div>
+		            	</div>
+	          		</div>
+	        	</div>
+
+		        <div class="col">
+		    	    <div class="card shadow-sm bg-dark">
+	    	        	<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+	    	        		<title>Placeholder</title>
+	    	        		<rect width="100%" height="100%" fill="#55595c"/>
+	    	        		<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+	    	        	</svg>
+			            <div class="card-body">
+			              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			              <div class="d-flex justify-content-between align-items-center">
+			                <div class="btn-group">
+			                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+			                </div>
+			                <small class="text-muted">9 mins</small>
+			              </div>
+			            </div>
+	          		</div>
+	        	</div>
+	    	</div>
+	    </div>
+	</main>
+
+	<footer class="footer mt-auto py-3 bg-dark flex-shrink-0">
+	  	<div class="container text-light">
+	    	<p class="float-end mb-1">
+	     	 <a href="#">Back to top</a>
+	    	</p>
+	    	<p class="mb-1">Placements Made Easy &copy; All rights reserved.</p>
+	  	</div>
+	</footer>
+
+
+	<script src="../js/index.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
