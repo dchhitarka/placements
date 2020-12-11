@@ -301,11 +301,11 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 		      ...doc.data(),
 		    }));
 		    student.map(doc => {
-		    	if(doc.reg_no == data.reg_no && doc.password == data.password){
-		    		console.log("Login Successfull!");
-		    		localStorage.setItem("id", doc.id)
-		    		window.location = "https://dchhitarka.github.io/placements/index.html"
-		    	}
+		    	console.log("Matching")
+		    	// if(doc.reg_no == data.reg_no && doc.password == data.password){
+		    	// 	localStorage.setItem("id", doc.id)
+		    	// 	window.location = urls.home;
+		    	// }
 		    })
 		    alert("Failed to Login. Try Again!")
 		});
