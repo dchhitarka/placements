@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Companies</title>
+	<title>Companies | Placements Made Easy</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/header.css">
 </head>
@@ -28,17 +28,18 @@
 					    <li class="nav-item">
 							<a class="nav-link" aria-current="page" href="trainings.html">Trainings</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item dashboard">
 							<a class="nav-link" aria-current="page" href="dashboard.html">Dashborad</a>
 						</li>
 				   	</ul>
 
 				  	<form class="d-flex">
-					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					    <button class="btn btn-outline-success me-2" type="submit">Search</button>
-					    <a href="auth/login.html" class="me-2">
-					    	<button class="btn btn-success">Login</button>
-						</a>
+<!-- 					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-outline-success me-2" type="submit">Search</button> -->
+					    <button class="me-2 btn btn-success login-button">
+					    	<a href="auth/login.html" class="text-decoration-none text-light">Login</a>
+					    </button>
+					    <button class="me-2 btn btn-success logout-button" style="display: none">Logout</button>
 				  	</form>
 				</div>
 			</div>
@@ -48,48 +49,18 @@
 	<main class="container my-5">
 		<h1>Companies</h1>
 	 	<div class="album py-5 bg-light">
-	    	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-light">
-	        	<div class="col">
-	          		<div class="card shadow-sm bg-dark">
-			            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-			            	<title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-			            </svg>
-
-			            <div class="card-body">
-			                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-		    	            <div class="d-flex justify-content-between align-items-center">
-			        	        <div class="btn-group">
-		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-			                  		<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-		                   		</div>
-		                		<small class="text-muted">9 mins</small>
-		              		</div>
-		            	</div>
-	          		</div>
-	        	</div>
-
-		        <div class="col">
-		    	    <div class="card shadow-sm bg-dark">
-	    	        	<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-	    	        		<title>Placeholder</title>
-	    	        		<rect width="100%" height="100%" fill="#55595c"/>
-	    	        		<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-	    	        	</svg>
-			            <div class="card-body">
-			              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			              <div class="d-flex justify-content-between align-items-center">
-			                <div class="btn-group">
-			                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-			                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-			                </div>
-			                <small class="text-muted">9 mins</small>
-			              </div>
-			            </div>
-	          		</div>
-	        	</div>
+	    	<div class="companies-card row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-light">
+	    		<!-- ADD CODE USING JAVASCRIPT -->
 	    	</div>
 	    </div>
 	</main>
+
+	<!-- LOADER -->
+	<div class="loader">
+		<svg fill="currentColor" width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 140" preserveAspectRatio="xMidYMid meet" x="202">
+			<rect xmlns="http://www.w3.org/2000/svg" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="30" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="60" width="15" height="140" rx="6"><animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="90" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="120" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect>
+		</svg>
+	</div>
 
 	<footer class="footer mt-auto py-3 bg-dark flex-shrink-0">
 	  	<div class="container text-light">
@@ -100,11 +71,21 @@
 	  	</div>
 	</footer>
 
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-	<script src="../js/index.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/index.js"></script>
 </body>
 </html>

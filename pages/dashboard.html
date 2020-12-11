@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dashboard</title>
+	<title>Dashboard | Placements Made Easys</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
@@ -29,62 +29,53 @@
 					    <li class="nav-item">
 							<a class="nav-link" aria-current="page" href="trainings.html">Trainings</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item dashboard">
 							<a class="nav-link active" aria-current="page" href="dashboard.html">Dashborad</a>
 						</li>
 				   	</ul>
 
 				  	<form class="d-flex">
-					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					    <button class="btn btn-outline-success me-2" type="submit">Search</button>
-					    <a href="auth/login.html" class="me-2">
-					    	<button class="btn btn-success">Login</button>
-						</a>
+<!-- 					    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-outline-success me-2" type="submit">Search</button> -->
+					    <button class="me-2 btn btn-success login-button">
+					    	<a href="auth/login.html" class="text-decoration-none text-light">Login</a>
+					    </button>
+					    <button class="me-2 btn btn-success logout-button" style="display: none">Logout</button>
 				  	</form>
 				</div>
 			</div>
 		</nav>
 
-<!-- 		<h1>Placements Made Easy</h1>
-		<nav>
-			<a href="../index.html">Home</a>
-			<a href="companies.html">Companies</a>
-			<a href="trainings.html">Trainings</a>
-			<a href="dashboard.html">Dashborad</a>
-			<a href="auth/login.html">Login</a>
-			<a href="auth/register.html">Register</a>
-		</nav>
--->	</header>
+	</header>
 
 	<main class="flex-shrink-1">
 		<div class="container my-5">
-			<h1>Dashboard</h1>
-			<p>Your Profile</p>
-
+			<h1 class="myname"></h1>
 			<hr>
-			<h1>Application Status (Table with Company Name and Status)</h1>
-			<table>
-				<thead>
+			<form class="profile">
+				<!-- ADD PROFILE FORM USING JAVASCRIPT -->
+			</form>
+
+			<h1 class="mt-4">Application Status </h1><hr>
+			<table class="applications table table-striped">
+				<thead class="thead-dark bg-dark text-light">
+					<th>#</th>
 					<th>Company</th>
+					<th>CTC</th>
 					<th>Status</th>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Abc</td>
-						<td>Applied</td>
-					</tr>
-					<tr>
-						<td>Abc</td>
-						<td>Applied</td>
-					</tr>
-					<tr>
-						<td>Abc</td>
-						<td>Applied</td>
-					</tr>
+				<tbody class="application-rows">
 				</tbody>
 			</table>
 		</div>
 	</main>
+
+	<!-- LOADER -->
+	<div class="loader">
+		<svg fill="currentColor" width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 140" preserveAspectRatio="xMidYMid meet" x="202">
+			<rect xmlns="http://www.w3.org/2000/svg" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="30" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="60" width="15" height="140" rx="6"><animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="90" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect><rect xmlns="http://www.w3.org/2000/svg" x="120" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate></rect>
+		</svg>
+	</div>
 
 	<footer class="footer mt-auto py-3 bg-dark flex-shrink-0">
 	  	<div class="container text-light">
@@ -95,11 +86,22 @@
 	  	</div>
 	</footer>
 
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-	<script src="../js/index.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/index.js"></script>
 
 </body>
 </html>
