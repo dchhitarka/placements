@@ -130,7 +130,7 @@ const displayTrainings = () => {
 			                <p>Date: ${formatDate(doc.from?.seconds)} - ${formatDate(doc.to?.seconds)}</p>
 		    	            <div class="d-flex justify-content-between align-items-center">
 			        	        <div class="btn-group">
-		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="///home/dchhitarka/Desktop/Practise/Project/pages/training.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
+		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${urls.home}pages/training.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
 			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.join}" target="_blank" class="text-decoration-none text-light">Join</a></button>` : ""}
 		                   		</div>
 		                		<!--<small class="text-muted">${formatDate(doc.created_at?.seconds)}</small>-->
@@ -149,7 +149,7 @@ if(window.location.pathname.endsWith("/pages/companies.html")){
 	displayCompanies()
 }
 // else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/company")){
-else if(window.location.pathname.startsWith("/pages/company")){
+else if(window.lo/cation.pathname.startsWith("/pages/company")){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
 	companies
@@ -160,6 +160,7 @@ else if(window.location.pathname.startsWith("/pages/company")){
 			window.location = urls.companies;
 		}
 		const data = doc.data();
+		console.log(data)
 		document.title = data.company + " " +document.title
 		let compDetails = document.querySelector(".company-details");
 		compDetails.innerHTML = 
@@ -171,8 +172,7 @@ else if(window.location.pathname.startsWith("/pages/company")){
 				<p>Apply <a href="${data.apply}" target="_blank">here</a></p>
 			</div>
 		`
-		/* ADD DATA TO COMPANY PAGE*/
-    	document.body.contains(loader) ? document.body.removeChild(loader) : null;
+		document.body.contains(loader) ? document.body.removeChild(loader) : null;
 	})
 }
 else if(window.location.pathname.endsWith("/pages/trainings.html")){
