@@ -90,13 +90,13 @@ const displayCompanies = () => {
 			            </svg>
 
 			            <div class="card-body">
-			                <p class="card-text">${doc.details}</p>
+			                <p class="card-text">${doc.details.split(0,25)}...</p>
 			                <p>CTC: ${doc.ctc}</p>
 			                <p>Apply Before ${formatDate(doc.last_date?.seconds)}</p>
 		    	            <div class="d-flex justify-content-between align-items-center">
 			        	        <div class="btn-group">
-		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="///home/dchhitarka/Desktop/Practise/Project/pages/company.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
-			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Apply</a></button>`: ""}
+		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${urls.home}pages/company.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
+			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.apply}" target="_blank" class="text-decoration-none text-light">Apply</a></button>`: ""}
 		                   		</div>
 		                		<small class="text-muted">${formatDate(doc.created_at?.seconds)}</small>
 		              		</div>
@@ -131,7 +131,7 @@ const displayTrainings = () => {
 		    	            <div class="d-flex justify-content-between align-items-center">
 			        	        <div class="btn-group">
 		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="///home/dchhitarka/Desktop/Practise/Project/pages/training.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
-			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Join</a></button>` : ""}
+			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.join}" target="_blank" class="text-decoration-none text-light">Join</a></button>` : ""}
 		                   		</div>
 		                		<!--<small class="text-muted">${formatDate(doc.created_at?.seconds)}</small>-->
 		              		</div>
@@ -148,7 +148,8 @@ if(window.location.pathname.endsWith("/pages/companies.html")){
 	// COMPANIES
 	displayCompanies()
 }
-else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/company")){
+// else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/company")){
+else if(window.location.pathname.startsWith("/pages/company")){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
 	companies
@@ -160,7 +161,16 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 		}
 		const data = doc.data();
 		document.title = data.company + " " +document.title
-		console.log(data);
+		let compDetails = document.querySelector(".company-details");
+		compDetails.innerHTML = 
+		`
+			<div>
+				<h1>${data.company}</h1>
+				<p>${data.details}</p>
+				<p>CTC - ${data.ctc}</p>
+				<p>Apply <a href="${data.apply}" target="_blank">here</a></p>
+			</div>
+		`
 		/* ADD DATA TO COMPANY PAGE*/
     	document.body.contains(loader) ? document.body.removeChild(loader) : null;
 	})
@@ -169,6 +179,7 @@ else if(window.location.pathname.endsWith("/pages/trainings.html")){
 	// TRAININGS
 	displayTrainings();
 }
+// else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/training")){
 else if(window.location.pathname.startsWith("/pages/training")){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
@@ -181,7 +192,16 @@ else if(window.location.pathname.startsWith("/pages/training")){
 		}
 		const data = doc.data();
 		document.title = data.company + " " + document.title
-		console.log(data);
+		let compDetails = document.querySelector(".company-details");
+		compDetails.innerHTML = 
+		`
+			<div>
+				<h1>${data.company}</h1>
+				<p>${data.details}</p>
+				<p>Date: ${formatDate(data.from?.seconds)} - ${formatDate(data.to?.seconds)}</p>
+				<p>Join <a href="${data.join}" target="_blank">here</a></p>
+			</div>
+		`
 		/* ADD DATA TO TRAINING PAGE*/
     	document.body.contains(loader) ? document.body.removeChild(loader) : null;
 	})
@@ -310,7 +330,7 @@ else if(window.location.pathname.endsWith("/pages/auth/login.html")){
 		    		return;
 		    	}
 		    })
-			!isLoggedin ? alert("Failed to Login. Try Again!") : null;		    
+			// !isLoggedin ? alert("Failed to Login. Try Again!") : null;		    
 		});
 	})
 }
