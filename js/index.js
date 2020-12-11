@@ -101,7 +101,7 @@ const displayCompanies = () => {
 		            	</div>
 	          		</div>
 	        	</div>`;
-	    	companiesCard.innerHTML = card;
+	    	companiesCard != null ? companiesCard.innerHTML = card : "";
 	    })
     	document.body.contains(loader) ? document.body.removeChild(loader) : null;
 	});
@@ -136,7 +136,7 @@ const displayTrainings = () => {
 		            	</div>
 	          		</div>
 	        	</div>`;
-	    	trainingsCard.innerHTML = card;
+	    	trainingsCard != null ? trainingsCard.innerHTML = card : "";
 	    })
     	document.body.contains(loader) ? document.body.removeChild(loader) : null;
 	 });	
@@ -187,7 +187,7 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 
 else if(window.location.pathname.endsWith("/pages/dashboard.html")){
 	// DASHBOARD
-	if(user.id == null) window.location = "file:///home/dchhitarka/Desktop/Practise/Project/index.html";
+	if(user.id == null) window.location = urls.home;
 	students
 	.doc(user.id)
 	.get()
@@ -287,7 +287,6 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 	if(user.id != null) window.location = urls.home;
 	// document.body.removeChild(loader);
 	const login = document.querySelector('#login-form')
-	
 	login.addEventListener('submit', (e) => {
 		e.preventDefault();
 		const data = {
@@ -301,13 +300,13 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 		      ...doc.data(),
 		    }));
 		    student.map(doc => {
-		    	console.log("Matching")
-		    	// if(doc.reg_no == data.reg_no && doc.password == data.password){
-		    	// 	localStorage.setItem("id", doc.id)
-		    	// 	window.location = urls.home;
-		    	// }
+		    	if(doc.reg_no == data.reg_no && doc.password == data.password){
+		    		localStorage.setItem("id", doc.id)
+		    		window.location = urls.home;
+		    		return;
+		    	}
 		    })
-		    alert("Failed to Login. Try Again!")
+		    alert("Failed to Login. Try Again!")		    
 		});
 	})
 }
