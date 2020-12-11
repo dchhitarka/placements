@@ -8,10 +8,10 @@ const formatDate = (d) => {
 }
 
 const urls = {
-	home: "https://dchhitarka.github.io/placements/index.html",
-	companies: "https://dchhitarka.github.io/placements/pages/companies.html",
-	trainings: "https://dchhitarka.github.io/placements/pages/trainings.html",
-	dashboard: "https://dchhitarka.github.io/placements/pages/dashboard.html"
+	home: "https://placementmadeeasy.web.app/",
+	companies: "https://placementmadeeasy.web.app/pages/companies.html",
+	trainings: "https://placementmadeeasy.web.app/pages/trainings.html",
+	dashboard: "https://placementmadeeasy.web.app/pages/dashboard.html"
 }
 
 var firebaseConfig = {
@@ -94,7 +94,7 @@ const displayCompanies = () => {
 		    	            <div class="d-flex justify-content-between align-items-center">
 			        	        <div class="btn-group">
 		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="///home/dchhitarka/Desktop/Practise/Project/pages/company.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
-			                  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Apply</a></button>
+			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Apply</a></button>`: ""}
 		                   		</div>
 		                		<small class="text-muted">${formatDate(doc.created_at?.seconds)}</small>
 		              		</div>
@@ -129,7 +129,7 @@ const displayTrainings = () => {
 		    	            <div class="d-flex justify-content-between align-items-center">
 			        	        <div class="btn-group">
 		                  	  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="///home/dchhitarka/Desktop/Practise/Project/pages/training.html?id=${doc.id}" class="text-decoration-none text-light">View</a></button>
-			                  		<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Join</a></button>
+			                  		${user.id != null ? `<button type="button" class="btn btn-sm btn-outline-secondary"><a href="${doc.link}" target="_blank" class="text-decoration-none text-light">Join</a></button>` : ""}
 		                   		</div>
 		                		<!--<small class="text-muted">${formatDate(doc.created_at?.seconds)}</small>-->
 		              		</div>
@@ -154,7 +154,7 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 	.get()
 	.then(doc => {
 		if (!doc.exists) {
-			window.location = urls.home;
+			window.location = urls.companies;
 		}
 		const data = doc.data();
 		document.title = data.company + " " +document.title
@@ -167,7 +167,7 @@ else if(window.location.pathname.endsWith("/pages/trainings.html")){
 	// TRAININGS
 	displayTrainings();
 }
-else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/training")){
+else if(window.location.pathname.startsWith("/pages/training")){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
 	trainings
@@ -175,7 +175,7 @@ else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/P
 	.get()
 	.then(doc => {
 		if (!doc.exists) {
-			window.location = "file:///home/dchhitarka/Desktop/Practise/Project/pages/companies.html";
+			window.location = urls.trainings;
 		}
 		const data = doc.data();
 		document.title = data.company + " " + document.title
@@ -282,7 +282,7 @@ else if(window.location.pathname.endsWith("/pages/dashboard.html")){
 	
 }
 
-else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/auth/")){
+else if(window.location.pathname.startsWith("/pages/auth/login")){
 	/* LOGIN PAGE*/
 	if(user.id != null) window.location = urls.home;
 	// document.body.removeChild(loader);
