@@ -149,7 +149,7 @@ if(window.location.pathname.endsWith("/pages/companies.html")){
 	displayCompanies()
 }
 // else if(window.location.pathname.startsWith("/home/dchhitarka/Desktop/Practise/Project/pages/company")){
-else if(window.lo/cation.pathname.startsWith("/pages/company")){
+else if(window.location.pathname.startsWith("/pages/company")){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
 	companies
