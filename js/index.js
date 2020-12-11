@@ -32,8 +32,9 @@ var firebaseConfig = {
 //     appId: "1:392004737537:web:31292e2549290227a53e00",
 //     measurementId: "G-4CF4G40ELN"
 // };
-console.log(window.location.pathname)
-console.log(window.location.pathname.endsWith("/pages/auth/login.html"))
+
+// console.log(window.location.pathname)
+
 const cyrb53 = function(str, seed = 0) {
     let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
     for (let i = 0, ch; i < str.length; i++) {
@@ -283,7 +284,7 @@ else if(window.location.pathname.endsWith("/pages/dashboard.html")){
 	
 }
 
-else if(window.location.pathname.startsWith("/pages/auth/login")){
+else if(window.location.pathname.endsWith("/pages/auth/login.html")){
 	/* LOGIN PAGE*/
 	if(user.id != null) window.location = urls.home;
 	// document.body.removeChild(loader);
@@ -300,14 +301,16 @@ else if(window.location.pathname.startsWith("/pages/auth/login")){
 		      id: doc.id,
 		      ...doc.data(),
 		    }));
+		    let isLoggedin = false;
 		    student.map(doc => {
 		    	if(doc.reg_no == data.reg_no && doc.password == data.password){
+		    		isLoggedin = true;
 		    		localStorage.setItem("id", doc.id)
 		    		window.location = urls.home;
 		    		return;
 		    	}
 		    })
-		    alert("Failed to Login. Try Again!")		    
+			!isLoggedin ? alert("Failed to Login. Try Again!") : null;		    
 		});
 	})
 }
