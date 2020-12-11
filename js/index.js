@@ -32,7 +32,8 @@ var firebaseConfig = {
 //     appId: "1:392004737537:web:31292e2549290227a53e00",
 //     measurementId: "G-4CF4G40ELN"
 // };
-
+console.log(window.location.pathname)
+console.log(window.location.pathname.endsWith("/pages/auth/login.html"))
 const cyrb53 = function(str, seed = 0) {
     let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
     for (let i = 0, ch; i < str.length; i++) {
